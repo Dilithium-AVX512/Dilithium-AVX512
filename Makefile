@@ -158,21 +158,21 @@ test/test_vectors5aes: test/test_vectors.c $(AES_SOURCES) $(AES_HEADERS)
 	$(CC) $(CFLAGS) -DDILITHIUM_MODE=5 -DDILITHIUM_USE_AES \
 	  -o $@ $< $(AES_SOURCES)
 
-test/test_speed2: test/test_speed_tt.c test/speed_print.c test/speed_print.h \
+test/test_speed2: test/test_speed.c test/speed_print.c test/speed_print.h \
   test/cpucycles.c test/cpucycles.h randombytes.c $(KECCAK_SOURCES) \
   $(KECCAK_HEADERS)
 	$(CC) $(CFLAGS) -DDILITHIUM_MODE=2 \
 	  -o $@ $< test/speed_print.c test/cpucycles.c randombytes.c \
 	  $(KECCAK_SOURCES)
 
-test/test_speed3: test/test_speed_tt.c test/speed_print.c test/speed_print.h \
+test/test_speed3: test/test_speed.c test/speed_print.c test/speed_print.h \
   test/cpucycles.c test/cpucycles.h randombytes.c $(KECCAK_SOURCES) \
   $(KECCAK_HEADERS)
 	$(CC) $(CFLAGS) -DDILITHIUM_MODE=3 \
 	  -o $@ $< test/speed_print.c test/cpucycles.c randombytes.c \
 	  $(KECCAK_SOURCES)
 
-test/test_speed5: test/test_speed_tt.c test/speed_print.c test/speed_print.h \
+test/test_speed5: test/test_speed.c test/speed_print.c test/speed_print.h \
   test/cpucycles.c test/cpucycles.h randombytes.c $(KECCAK_SOURCES) \
   $(KECCAK_HEADERS)
 	$(CC) $(CFLAGS) -DDILITHIUM_MODE=5 \
